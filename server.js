@@ -6,8 +6,9 @@ const Pet = require('./models/pet');
 const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 8080;
+const dbURL = process.env.MONGODB_URI || "mongodb://localhost/updog";
 
-mongoose.connect('mongodb://localhost/updog');
+mongoose.connect(dbURL);
 
 app.use(express.static('public'));
 // use is middleware
